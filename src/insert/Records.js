@@ -8,7 +8,7 @@ const Records = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [records]);
 
   const fetchData = () => {
     axios
@@ -30,7 +30,7 @@ const Records = () => {
       })
       .then((res) => {
         console.log(res);
-        fetchData(); 
+        fetchData();
         setIsEditing(false);
         setEditedRecord({});
       })
@@ -42,7 +42,7 @@ const Records = () => {
       .delete(`http://localhost:3002/delete/${id}`)
       .then((res) => {
         console.log(res);
-        fetchData(); 
+        fetchData();
       })
       .catch((err) => console.error(err));
   };
